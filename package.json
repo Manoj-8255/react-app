@@ -1,0 +1,38 @@
+{
+  "name": "react-app",
+  "version": "1.0.0",
+  "description": "This is react-app creation by manojkumar",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "rm -rf .parcel-cache && parcel  index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manoj-8255/react-app.git"
+  },
+  "keywords": [
+    "react",
+    "react-app",
+    "manoj-react-app"
+  ],
+  "author": "\"Manoj kumar\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Manoj-8255/react-app/issues"
+  },
+  "homepage": "https://github.com/Manoj-8255/react-app#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.12.0",
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "last 10 version"
+  ]
+}
