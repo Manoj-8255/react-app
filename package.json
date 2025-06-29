@@ -25,12 +25,17 @@
   "homepage": "https://github.com/Manoj-8255/react-app#readme",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.12.0",
-    "parcel": "^2.12.0",
-    "process": "^0.11.10"
+    "autoprefixer": "^10.4.21",
+    "parcel": "^2.13.3",
+    "postcss": "^8.5.3",
+    "process": "^0.11.10",
+    "tailwindcss": "^4.1.3"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.1.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.28.2"
   },
   "browserslist": [
     "last 10 version"

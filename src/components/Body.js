@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { RestrauntCard } from "./RestrauntCard";
+import { Link } from "react-router-dom";
+import RestrauntCard, { withPromotedLabel } from "./RestrauntCard";
 import Shimmer from "./Shimmer";
 
 export const Body = () => {
@@ -7,7 +8,10 @@ export const Body = () => {
   const [filterdRestruants, setFilteredRestraunts] = useState([]);
   const [searchText, setSearchText] = useState([""]);
 
-  // If no dependancy array useEf
+  const PromotedRestrauntCard = withPromotedLabel(RestrauntCard);
+
+  // If no dependancy array useEffect is called on every render
+  // If dependancye array is empty it called only once on page load
   useEffect(() => {
     fetchData();
   }, []);
@@ -24,6 +28,8 @@ export const Body = () => {
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+
+  console.log(filterdRestruants)
 
   return listofRestraunts?.length === 0 ? (
     <Shimmer />
@@ -68,7 +74,13 @@ export const Body = () => {
       </div>
       <div className="restraunt-container">
         {filterdRestruants?.map((res) => (
-          <RestrauntCard res={res} />
+          <Link key={res.name} to={`/restraunt/${res.info.id}`} >
+            {res.info?.promoted ? (
+              <PromotedRestrauntCard res={res} />
+            ) : (
+              <RestrauntCard res={res} />
+            )}
+        </Link>
         ))}
       </div>
     </div>

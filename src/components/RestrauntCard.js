@@ -1,4 +1,4 @@
-export const RestrauntCard = ({ res }) => {
+const RestrauntCard = ({ res }) => {
   const { name, cloudinaryImageId, cuisines, avgRating } = res?.info ?? {};
   return (
     <div className="res-card">
@@ -14,3 +14,20 @@ export const RestrauntCard = ({ res }) => {
     </div>
   );
 };
+
+
+/// Higher order component
+
+export const withPromotedLabel = (RestrauntCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label>Promoted</label>
+        <RestrauntCard {...props} />
+      </div>
+    );
+  };
+}
+
+
+export default RestrauntCard;
